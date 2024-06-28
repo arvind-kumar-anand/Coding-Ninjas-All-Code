@@ -9,7 +9,7 @@ class DynamicArray
 public:
 	DynamicArray()
 	{
-		data = new int[5];
+		data = new int[5]; //
 		nextIndex = 0;
 		capacity = 5;
 	}
