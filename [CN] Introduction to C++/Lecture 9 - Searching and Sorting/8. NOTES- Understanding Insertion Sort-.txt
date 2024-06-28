@@ -1,0 +1,2 @@
+In the upcoming video of Insertion Sort, Nidhi ma’am wrote the array as 1 8 5 10 9 4 at
+timestamp 13:27. There’s a small correction here. The array would be 1 5 8 10 9 4
