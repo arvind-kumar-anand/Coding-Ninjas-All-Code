@@ -1,5 +1,5 @@
 #include <iostream>
-#include "8.Check BST - 3-BinaryTreeNode.h"
+#include "13.Root to Node Path in Binary Tree-BinaryTreeNode.h"
 #include <queue>
 using namespace std;
 
@@ -302,6 +302,39 @@ bool isBST3(BinaryTreeNode<int> *root, int min = INT_MIN, int max = INT_MAX)
 	bool isLeftOk = isBST3(root->left, min, root->data - 1);
 	bool isRightOk = isBST3(root->right, root->data, max);
 	return isLeftOk && isRightOk;
+}
+
+vector<int> *getRootToNodePath(BinaryTreeNode<int> *root, int data)
+{
+	if (root == NULL)
+	{
+		return NULL;
+	}
+
+	if (root->data == data)
+	{
+		vector<int> *output = new vector<int>();
+		output->push_back(root->data);
+		return output;
+	}
+
+	vector<int> *leftOutput = getRootToNodePath(root->left, data);
+	if (leftOutput != NULL)
+	{
+		leftOutput->push_back(root->data);
+		return leftOutput;
+	}
+
+	vector<int> *rightOutput = getRootToNodePath(root->right, data);
+	if (rightOutput != NULL)
+	{
+		rightOutput->push_back(root->data);
+		return rightOutput;
+	}
+	else
+	{
+		return NULL;
+	}
 }
 
 // 1 2 3 4 5 6 7 -1 -1 -1 -1 8 9 -1 -1 -1 -1 -1 -1
