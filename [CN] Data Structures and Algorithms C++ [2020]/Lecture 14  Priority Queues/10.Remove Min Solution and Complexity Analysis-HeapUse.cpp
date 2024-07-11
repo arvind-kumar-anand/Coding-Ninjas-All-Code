@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "PriorityQueue.h"
-
+#include "10.Remove Min Solution and Complexity Analysis-PriorityQueue.h"
 
 int main() {
 	PriorityQueue p;
@@ -21,6 +20,5 @@ int main() {
 		cout << p.removeMin() << " " ;
 
 	}
-	cout << endl
+	cout << endl;
 }
-
