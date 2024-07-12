@@ -49,6 +49,7 @@
     "algorithm": "cpp",
     "deque": "cpp",
     "stack": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "xhash": "cpp"
   }
 }
