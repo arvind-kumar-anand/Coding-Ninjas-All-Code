@@ -50,6 +50,8 @@
     "deque": "cpp",
     "stack": "cpp",
     "vector": "cpp",
-    "xhash": "cpp"
+    "xhash": "cpp",
+    "list": "cpp",
+    "unordered_map": "cpp"
   }
 }

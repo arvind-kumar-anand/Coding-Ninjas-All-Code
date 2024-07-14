@@ -1,3 +1,4 @@
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -98,6 +99,29 @@ private:
         int oldBucketcount = numBuckets;
         numBuckets *= 2;
         count = 0;
+        for (int i = 0; i < oldBucketCount; i++)
+        {
+            MapNode<V> *head = temp[i];
+            while (head != NULL)
+            {
+                string key = head->key;
+                V value = head->value;
+                insert(key, value);
+                head = head->next;
+            }
+        }
+        for (int i = 0; i < oldBucketCount; i++)
+        {
+            MapNode<V> *head = temp[i];
+            delete head;
+        }
+        delete[] temp;
+    }
+
+public:
+    double getLoadFactor()
+    {
+        return (1.0 * count) / numBuckets;
     }
 
 public:
@@ -155,3 +179,33 @@ public:
         return 0;
     }
 };
+
+int main()
+{
+    ourmap<int> map;
+    for (int i = 0; i < 10; i++)
+    {
+        char c = '0' + i;
+        string key = "abc";
+        key = key + c;
+        int value = i + 1;
+        map.insert(key, value);
+        cout << map.getLoadFactor() << endl;
+    }
+    cout << map.size() << endl;
+    map.remove("abd2");
+    map.remove("abd7");
+    cout << map.size() << endl;
+
+    cout << map.size() << endl;
+
+    for (int i = 0; i < 10; i++)
+    {
+        char c = '0' + i;
+        string key = "abc";
+        key = key + c;
+        cout << key << ":" << map.getValue(key) << endl;
+    }
+
+    cout << map.size() << endl;
+}
