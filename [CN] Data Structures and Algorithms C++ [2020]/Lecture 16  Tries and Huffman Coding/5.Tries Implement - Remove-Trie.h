@@ -71,7 +71,7 @@ public:
 	// For user
 	void insertWord(string word)
 	{
-		insertWord(root, word);
+		insertWord(root, word); 
 	}
 
 	void removeWord(TrieNode *root, string word)
