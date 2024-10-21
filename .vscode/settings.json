@@ -52,6 +52,7 @@
     "vector": "cpp",
     "xhash": "cpp",
     "list": "cpp",
-    "unordered_map": "cpp"
+    "unordered_map": "cpp",
+    "string": "cpp"
   }
 }
