@@ -8,7 +8,7 @@ int minCostPath(int **input, int m, int n, int i, int j)
     if (i == m - 1 && j == n - 1)
     {
         return input[i][j];
-    }
+    } 
 
     if (i >= m || j >= n)
     {
